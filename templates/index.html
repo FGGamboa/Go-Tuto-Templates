@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>Hi!</p>
+  <p>My name is {{.Name}} and i am {{.Age}} years old.</p>
+  
+  {{ if ge (len .Hobbies) 1 }}
+  <p>My hobbies are:</p>
+
+  <ul>
+    {{range $index, $hobbie := .Hobbies}}
+    <li>{{increment $index}}. {{$hobbie}}</li>
+    {{end}}
+  </ul>
+
+  {{end}}
+</body>
+</html>

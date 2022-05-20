@@ -1,0 +1,11 @@
+Hi
+
+My name is {{.Name}} and i am {{.Age}} years old.
+
+{{ if ge (len .Hobbies) 1 }}
+  My hobbies are:
+  {{range $index, $hobbie := .Hobbies}}
+  {{increment $index}}. {{$hobbie}}
+  {{end}}
+
+{{end}}
